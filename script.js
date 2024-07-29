@@ -6,9 +6,9 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "No caminho para casa, após a escola, você se depara com algo brilhante caído em meio a uma árvore que recentemente caiu após uma tempestade. O que você faz?",
+        enunciado: "Após a escola, caminho à sua casa, você se depara com algo brilhanto em meio a uma árvore que recentemente caiu após uma tempestade. O que você faz?",
         alternativas: [
-            "Verifica o que é",
+            "Vai averiguar",
             "Ignora e vai para casa"
         ]
     },
@@ -42,9 +42,12 @@ const perguntas = [
     }
 ];
 
-let atual = 0
+let atual = 0;
 let perguntaAtual;
 
 function mostraPergunta() {
-    perguntaAtual = perguntas[atual]
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
 }
+
+mostraPergunta()

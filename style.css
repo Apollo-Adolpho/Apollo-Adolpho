@@ -7,6 +7,11 @@ body{
 }
 
 .caixa-principal{
+    position: relative;
+    display: block;
+    margin: 0 auto;
     width: fit-content;
-    background-color: red;
+    max-width: 512px;
+    text-align: center;
+    color: white;
 }
