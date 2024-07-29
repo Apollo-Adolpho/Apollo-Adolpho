@@ -6,10 +6,10 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Pergunta 1",
+        enunciado: "Após a escola, caminho à sua casa, você se depara com algo brilhanto em meio a uma árvore que recentemente caiu após uma tempestade. O que você faz?",
         alternativas: [
-            "Alternativa 1",
-            "Alternativa 2"
+            "Vai averiguar",
+            "Ignora e vai para casa"
         ]
     },
     {
