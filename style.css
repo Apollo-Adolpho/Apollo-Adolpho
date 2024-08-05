@@ -6,16 +6,23 @@ body{
   min-height: 100vh
 }
 
-.caixa-principal{
+.main-container{
     position: relative;
     display: block;
     margin: 0 auto;
-    width: fit-content;
-    max-width: 512px;
+    max-height: 480px;
+    max-width: 640px;
     text-align: center;
     color: white;
 }
 
-.caixa-principal h1{
-    text-align: center;
+
+
+.container-questions{
+  background-color: #add8e650;
+  padding: 16px;
+  border: solid 2px white;
+  border-radius: 8px;
+  text-align: left;
+
 }
