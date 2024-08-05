@@ -24,5 +24,7 @@ body{
   border: solid 2px white;
   border-radius: 8px;
   text-align: left;
-
+}
+.container-alternatives button{
+  padding: 8px;
 }
