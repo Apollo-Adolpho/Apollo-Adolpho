@@ -53,9 +53,9 @@ function showQuestion() {
 }
 function showAlternatives() {
     for (const alternative of currentQuestion.alternatives) {
-        const alternativesButton = document.createElement("button")
-        alternativesButton.textContent = alternative
-        alternativesContainer.appendChild(alternativesButton)
+        const buttonAlternatives = document.createElement("button")
+        buttonAlternatives.textContent = alternative
+        containerAlternatives.appendChild(buttonAlternatives)
     }
   }
   
