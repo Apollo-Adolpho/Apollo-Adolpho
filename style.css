@@ -3,20 +3,27 @@ html{background-color: #343435}
 body{
   background: rgb(2,0,36);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,44,87,1) 35%, rgba(63,152,185,1) 100%);
-  min-height: 100vh
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal
 }
 
 .main-container{
     position: relative;
     display: block;
     margin: 0 auto;
-    max-height: 480px;
     max-width: 640px;
     text-align: center;
     color: white;
 }
 
+h1 {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-size:32pt;
 
+}
 
 .container-questions{
   background-color: #add8e650;
@@ -24,7 +31,10 @@ body{
   border: solid 2px white;
   border-radius: 8px;
   text-align: left;
+
 }
 .container-alternatives button{
-  padding: 8px;
+  font-size: 12pt;
+  padding: 16px;
+  margin: 24px 30px 0 30px;
 }
