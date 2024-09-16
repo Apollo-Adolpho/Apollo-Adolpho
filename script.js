@@ -1,114 +1,113 @@
-const mainContainer = document.querySelector(".main-container");
-const containerQuestions = document.querySelector(".container-questions");
-const containerAlternatives = document.querySelector(".container-alternatives");
-const containerResult = document.querySelector(".container-result");
-const textResult = document.querySelector(".text-result");
-const questions = [
-    {
-      qTitle:
-        "Após a escola, caminho à sua casa, você se depara com algo brilhanto em meio a uma árvore que recentemente caiu após uma tempestade. O que você faz?",
-            alternatives: [
-        {
-          text: "Vai averiguar.",
-          
-          afirmation: "afirmação",
-        },
-        {
-          text: "Ignora e vai para casa.",
-          afirmation: "afirmação",
-        },
-      ],
-    },
-    {
-      qTitle:
-        "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
-      alternatives: [
-        {
-          text:
-            "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-          afirmation: "afirmação",
-        },
-        {
-          text:
-            "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-          afirmation: "afirmação",
-        },
-      ],
-    },
-    {
-      qTitle:
-        "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
-      alternatives: [
-        {
-          text:
-            "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-          afirmation: "afirmação",
-        },
-        {
-          text:
-            "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-          afirmation: "afirmação",
-        },
-      ],
-    },
-    {
-      qTitle:
-        "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
-      alternatives: [
-        {
-          text:
-            "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-          afirmation: "afirmação",
-        },
-        {
-          text: "Criar uma imagem utilizando um gerador de imagem de IA.",
-          afirmation: "afirmação",
-        },
-      ],
-    },
-    {
-      qTitle:
-        "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
-      alternatives: [
-        {
-          text:
-            "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o text inteiro.",
-          afirmation: "afirmação",
-        },
-        {
-          text:
-            "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-          afirmation: "afirmação",
-        },
-      ],
-    },
-  ];
-  
-let current = 0;
-let currentQuestion;
-let finalStory = "";
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
+
+const perguntas = [
+  {
+      enunciado: "Após a escola, você se depara com algo brilhando em meio a uma árvore que caiu após uma tempestade. O que você faz?",
+      alternativas: [
+          {
+              texto: "Vai averiguar.",
+              afirmacao: "Você se aproxima do brilho e encontra um pequeno dispositivo coberto de símbolos. O que você faz a seguir?"
+          },
+          {
+              texto: "Ignora e vai para casa.",
+              afirmacao: "Você decide seguir para casa, mas a curiosidade te incomoda. Você decide voltar para investigar mais tarde."
+          }
+      ]
+  },
+  {
+      enunciado: "Você decide averiguar o que está brilhando. Ao se aproximar, percebe que é um pequeno dispositivo de aparência futurista. O que você faz?",
+      alternativas: [
+          {
+              texto: "Toca no dispositivo.",
+              afirmacao: "Você toca no dispositivo e ele começa a emitir uma luz suave. O que você faz a seguir?"
+          },
+          {
+              texto: "Observa o dispositivo de longe.",
+              afirmacao: "Você observa o dispositivo e nota que ele começa a pulsar suavemente. O que você decide fazer agora?"
+          }
+      ]
+  },
+  {
+      enunciado: "Após tocar o dispositivo ou observá-lo de longe, ele começa a projetar uma série de hologramas. O que você faz?",
+      alternativas: [
+          {
+              texto: "Tenta interagir com os hologramas.",
+              afirmacao: "Você tenta tocar os hologramas, e eles se tornam cada vez mais intensos. O que você faz a seguir?"
+          },
+          {
+              texto: "Continua a observar os hologramas.",
+              afirmacao: "Você continua observando os hologramas, que ficam mais vibrantes e complexos. O que você decide fazer agora?"
+          }
+      ]
+  },
+  {
+      enunciado: "Os hologramas se tornam cada vez mais complexos e envolventes. O dispositivo parece estar se conectando com o ambiente ao redor. O que você faz?",
+      alternativas: [
+          {
+              texto: "Se aproxima para investigar melhor.",
+              afirmacao: "Você se aproxima ainda mais e sente uma energia crescente ao seu redor. O que você faz agora?"
+          },
+          {
+              texto: "Decide se afastar um pouco para observar com mais segurança.",
+              afirmacao: "Você se afasta um pouco, mas percebe que a energia ao redor está se intensificando. O que você decide fazer agora?"
+          }
+      ]
+  },
+  {
+      enunciado: "A energia do dispositivo atinge seu auge e você sente uma sensação estranha envolvendo seu corpo. O que você faz?",
+      alternativas: [
+          {
+              texto: "Tenta se afastar rapidamente.",
+              afirmacao: "Você tenta se afastar, mas a energia parece puxá-lo de volta. Em um instante, você desaparece sem deixar rastros."
+          },
+          {
+              texto: "Fica parado, tentando entender o que está acontecendo.",
+              afirmacao: "Você decide ficar parado, tentando compreender a situação. A energia se intensifica e, de repente, você desaparece sem deixar rastros."
+          }
+      ]
+  },
+];
 
 
-function showQuestion() {
-    currentQuestion = questions[current];
-    containerQuestions.textContent = currentQuestion.qTitle;
-    showAlternatives();
-}
-function showAlternatives() {
-    for (const alternative of currentQuestion.alternatives) {
-        const buttonAlternatives = document.createElement("button")
-        buttonAlternatives.textContent = alternative.text;
-        buttonAlternatives.addEventListener("click",() => selectedAnswer(alternative));
-        containerAlternatives.appendChild(buttonAlternatives)
+let atual = 0;
+let perguntaAtual;
+let historiaFinal = "";
+
+function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
     }
-  }
-  function selectedAnswer(selectedOption){
-    const afirmation = selectedOption.afirmation;
-    finalStory = afirmation;
-
-    current++;
-    showQuestion();
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
 }
 
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
 
-  showQuestion()
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "No final das contas...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
+}
+
+mostraPergunta();
